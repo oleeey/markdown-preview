@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Preview</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="editorWrap">
+        <div class="toolbar">
+          <div class="left">
+            <img src="pen.svg" alt="edit icon"/>
+            <p>Editor</p>
+          </div>
+          <img class="img-zoom" src="magnifying-glass-solid.svg" src="magnifying glass" onclick="toggleMax1()" />
+        </div>
+        <textarea id="editor" type="text" rows="8" cols="50"># Welcome to my Markdown Previewer! 
+## This is a sub-heading...
+### And here's some other cool stuff:
+Heres some code, `<div></div>`, between 2 backticks.
+
+```
+// this is multi-line code:
+
+function anotherExample(firstLine, lastLine) {
+  if (firstLine == '```' && lastLine == '```') {
+    return multiLineCode;
+  }
+}
+```
+You can also make text **bold**... whoa!
+
+There's also [links](https://github.com/oleeey/Projekte), and
+> Block Quotes!
+And last but not least, let's not forget embedded images:
+![mountain](https://images.immediate.co.uk/production/volatile/sites/4/2021/08/mountains-7ddde89.jpg?quality=90&resize=768,574)
+</textarea>
+    </div>
+
+    <div id="previewWrap">
+        <div class="toolbar" id="toolbar2">
+          <div class="left">
+            <img src="book-solid.svg" alt="preview icon"/>
+            <p>Previewer</p>
+          </div>
+          <img class="img-zoom" src="magnifying-glass-solid.svg" src="magnifying glass" onclick="toggleMax2()" role="button"/>
+        </div>
+        <div id="preview"></div>
+    </div>
+</body>
+</html>
